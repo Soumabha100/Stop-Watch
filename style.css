@@ -82,7 +82,7 @@ body{
         background-color: hsla(0, 0%, 0%, 0.404);
         backdrop-filter: blur(10px);
         border-radius: 24px;
-        width: 80%;
+        width: 85%;
         height: 20rem;
         padding: 16px;
     }
@@ -94,7 +94,7 @@ body{
         margin-bottom: 20px;
     }
     #controls button {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-weight: bold;
         padding: 8px 16px;
         margin: 4px;
@@ -120,7 +120,7 @@ body{
         background-color: hsla(0, 0%, 0%, 0.404);
         backdrop-filter: blur(10px);
         border-radius: 24px;
-        width: 80%;
+        width: 85%;
         height: 20rem;
         padding: 16px;
     }
