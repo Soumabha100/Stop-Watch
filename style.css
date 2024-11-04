@@ -12,7 +12,7 @@ body{
 #myH1{
     font-size: 4rem;
     font-weight: bold;
-    color: rgba(236, 236, 236, 0.938);
+    color: rgb(255, 255, 255);
 }
 
 #container{
@@ -22,9 +22,9 @@ body{
     background-color: hsla(0, 0%, 0%, 0.404);
     backdrop-filter: blur(10px);
     border-radius: 24px;
-    width: 90%;
+    width: 60%;
     height: 20rem;
-    padding: 24px;
+    padding: 16px;
 }
 #display{
     font-size: 4.5rem;
@@ -66,4 +66,79 @@ body{
 #resetBtn:hover {
     background-color: rgb(0, 168, 206);
     transition: ease-in-out 300ms;
+}
+
+@media screen and (max-width: 768px) {
+
+    #myH1{
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+    }
+    #container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: hsla(0, 0%, 0%, 0.404);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        width: 80%;
+        height: 20rem;
+        padding: 16px;
+    }
+    #display{
+        font-size: 3.5rem;
+        color: white;
+        font-weight: bold;
+        text-shadow: 2px 2px 8px hsla(0, 0%, 0%, 0.404);
+        margin-bottom: 20px;
+    }
+    #controls button {
+        font-size: 1.3rem;
+        font-weight: bold;
+        padding: 8px 16px;
+        margin: 4px;
+        border-radius: 18px;
+        min-width: 90px;
+        border-style: none;
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+
+    #myH1{
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+    }
+    #container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: hsla(0, 0%, 0%, 0.404);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        width: 80%;
+        height: 20rem;
+        padding: 16px;
+    }
+    #display{
+        font-size: 3.4rem;
+        color: white;
+        font-weight: bold;
+        text-shadow: 2px 2px 8px hsla(0, 0%, 0%, 0.404);
+        margin-bottom: 20px;
+    }
+    #controls button {
+        font-size: 1.35rem;
+        font-weight: bold;
+        padding: 8px 16px;
+        margin: 4px;
+        border-radius: 18px;
+        min-width: 80px;
+        border-style: none;
+        cursor: pointer;
+    }
 }
