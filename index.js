@@ -1,4 +1,7 @@
 const display = document.getElementById("display");
+const resetBtn = document.getElementById("resetBtn");
+const startBtn = document.getElementById("startBtn");
+const stopBtn = document.getElementById("stopBtn");
 let timer = null;
 let startTime = 0;
 let elapsedTime = 0;
@@ -9,6 +12,10 @@ function start() {
         startTime = Date.now() - elapsedTime;
         timer = setInterval(updateTime, 10);
         watchRunning = true;
+        checkBtnState();
+    }
+    else {
+        console.log("Button is Inactive!");
     }
 }
 function stop() {
@@ -16,14 +23,24 @@ function stop() {
         clearInterval(timer);
         elapsedTime = Date.now() - startTime;
         watchRunning = false;
+        checkBtnState();
+    }
+    else{
+        console.log("Button is Inactive!");
     }
 }
 function reset() {
-    clearInterval(timer);
-    startTime = 0;
-    elapsedTime = 0;
-    watchRunning = false;
-    display.textContent = `00:00:00:00`;
+    if ((!watchRunning) && elapsedTime > 0) {
+        clearInterval(timer);
+        startTime = 0;
+        elapsedTime = 0;
+        watchRunning = false;
+        display.textContent = `00:00:00:00`;
+        checkBtnState();
+    }
+    else {
+        console.log("Button is Inactive!");
+    }
 }
 
 function updateTime() {
@@ -42,3 +59,30 @@ function updateTime() {
 
     display.textContent = `${hours}:${minutes}:${seconds}:${milliSeconds}`;
 }
+
+function checkBtnState () {
+    // To Check whether Reset Btn is Active or not
+    if (!watchRunning && elapsedTime > 0) {
+        resetBtn.disabled = false;
+    }
+    else {
+        resetBtn.disabled = true;
+    }
+
+    // To Check whether Start Btn is Active or not
+    if (!watchRunning) {
+        startBtn.disabled = false;
+    }
+    else {
+        startBtn.disabled = true;
+    }
+    // To Check whether Stop Btn is Active or not
+    if (watchRunning) {
+        stopBtn.disabled = false;
+    }
+    else {
+        stopBtn.disabled = true;
+    }
+}
+
+checkBtnState ();
